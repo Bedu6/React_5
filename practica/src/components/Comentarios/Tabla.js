@@ -7,6 +7,7 @@ const Tabla = (props) => (
 	    <tr>
 	      <th>Email</th>
 	      <th>Contenido</th>
+	      <th>Acciones</th>
 	    </tr>
 	  </thead>
 

@@ -7,7 +7,8 @@ import Fatal from '../General/Fatal';
 
 class index extends Component {
 	componentDidMount() {
-		this.props.traerFotos();
+		if (!this.props.fotos.length)
+			this.props.traerFotos();
 	}
 
 	desplegar = () => (
