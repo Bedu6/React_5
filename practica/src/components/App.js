@@ -15,6 +15,7 @@ class App extends Component {
             <div className='container'>
               <Route exact path='/' component={Comentarios} />
               <Route exact path='/comentarios/guardar' component={ComentariosGuardar} />
+              <Route exact path='/comentarios/editar/:id' component={ComentariosGuardar} />
               <Route exact path='/fotos' component={Fotos} />
             </div>
           </div>

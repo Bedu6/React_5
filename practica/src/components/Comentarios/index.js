@@ -2,11 +2,10 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import * as comentariosActions from '../../actions/comentariosActions';
-import { Button, Icon, Modal } from 'react-materialize';
+import { Icon } from 'react-materialize';
 import Cargando from '../General/Cargando';
 import Fatal from '../General/Fatal';
 import Tabla from './Tabla';
-import Guardar from './Guardar';
 
 class index extends Component {
 	componentDidMount() {
@@ -20,17 +19,12 @@ class index extends Component {
 			  <td>{ comentario.email }</td>
 			  <td>{ comentario.body }</td>
 			  <td>
-			  		<Modal
-			  			header='Modal Header'
-			  			fixedFooter
-			  			trigger={
-			  				<a className='manita'>
-			  					<Icon>edit</Icon>
-			  				</a>
-			  			}
+			  		<Link
+			  			to={`/comentarios/editar/${comentario.id}`}
+			  			className='manita'
 			  		>
-			  			hola
-			  		</Modal>
+			  			<Icon>edit</Icon>
+			  		</Link>
 			  </td>
 			</tr>
 		))
@@ -51,9 +45,9 @@ class index extends Component {
 			<div>
 				<div className='flex align_center'>
 					<h2>Comentarios</h2>
-					<Link icon="add" to="/comentarios/guardar" class="btn waves-effect waves-light btn-large btn-floating red space"
+					<Link icon="add" to="/comentarios/guardar" className="btn waves-effect waves-light btn-large btn-floating red space"
 					>
-						<i class="material-icons">add</i>
+						<i className="material-icons">add</i>
 					</Link>
 				</div>
 
